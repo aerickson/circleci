@@ -31,7 +31,8 @@ module CircleCi
     # @param username [String] - User or org name who owns project
     # @param project  [String] - Name of project
     # @param branch   [String] - Name of branch
-    # @param body     [Hash] - Optional post body with build parameters
+    # @param params   [Hash] - Optional build parameters
+    # @param body     [Hash] - Optional post body
     # @return         [CircleCi::Response] - Response object
     def self.build_branch(username, project, branch, params = {}, body = {})
       CircleCi.request("/project/#{username}/#{project}/tree/#{branch}", params).post(body)
